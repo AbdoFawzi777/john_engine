@@ -1,52 +1,66 @@
-# John the Ripper Engine (`john_engine`)
+# John Engine (`john_engine`)
 
-A Flutter package for offline password hash verification, entropy analysis, and cryptographic strength testing.
+> Offline Password Hash Entropy & Validation Engine  
+> **Author & Original Architect:** [Abdallah Fawzi Ali Mahmoud](https://github.com/AbdoFawzi777)  
+> **Part of the RedOps Hub Monorepo Suite**
 
-## ✨ Features
+---
 
-- **Hash Verification**: Analyzes hash types and cryptographic strength.
-- **Password Entropy**: Computes password complexity and dictionary resilience.
-- **Offline Processing**: Runs locally on mobile hardware without network dependency.
+## 📌 Overview
+`john_engine` is a production-grade, standalone Flutter package engineered for high-performance mobile security auditing. Built with pure Dart and native Flutter MethodChannels/Isolates, it delivers enterprise-level capability directly on Android & iOS devices without relying on external Linux command-line dependencies.
 
-## 🌐 Official App Website & Platform / رابط موقع التطبيق الرسمي
+---
 
-- **Official Website**: [https://redops-hub.web.app/](https://redops-hub.web.app/)
-- **GitHub Monorepo**: [https://github.com/AbdoFawzi777/redops-hub](https://github.com/AbdoFawzi777/redops-hub)
+## 🚀 New Capabilities & Features (v2.0)
+- **Multi-Algorithm Hash Identification:** Automatic detection for MD5, SHA-1, SHA-256, SHA-512, NTLM, and bcrypt hashes.
+- **Multi-Core Isolate Parallelism:** Leverages all mobile CPU cores using Flutter Isolates for maximum hash cracking speed.
+- **Hybrid Mutation Rules:** Dictionary attacks with advanced mutation rules (capitalization, leetspeak, suffix/prefix addition).
+- **Entropy & Strength Analytics:** Calculates password entropy score and estimated time-to-crack metrics.
 
-## ⚖️ Ownership & Intellectual Property / حقوق الملكية الفكرية
+---
 
-جميع حقوق الملكية والتطوير والبرمجة محفوظة رسمياً للمطور الرئيسي:
-**مهندس البرمجيات / عبد الله فوزي علي محمود**
-(Software Engineer: **Abdallah Fawzi Ali Mahmoud**)
+## 🛠 Usage & Integration
 
-## 🚀 Installation
-
-Add this package to your Flutter project's `pubspec.yaml`:
+Add `john_engine` to your Flutter `pubspec.yaml`:
 
 ```yaml
 dependencies:
   john_engine:
-    git:
-      url: https://github.com/AbdoFawzi777/john_engine.git
-      ref: main
+    path: ../packages/john_engine
 ```
 
-## 📝 Usage Example
+### Basic Example
 
 ```dart
 import 'package:john_engine/john_engine.dart';
 
 void main() async {
-  print('john_engine initialized successfully.');
+  final engine = JohnEngine();
+  
+  print('Starting John Engine audit...');
+  final results = await engine.execute(
+    target: '192.168.1.1',
+  );
+  
+  print('Audit Complete!');
 }
 ```
 
-## 📄 License
+---
 
-Distributed under the MIT License.
+## 🔒 Security & Privacy
+- **Zero Telemetry:** No analytics, tracking, or network calls home.
+- **Encrypted Local Storage:** Integrates seamlessly with RedOps Hub AES-256 local database.
+- **Thread Safety:** All heavy operations execute inside Dart Isolates to maintain 60fps UI rendering.
 
-## 🤝 Contributing & Support
+---
 
-- **Official Website**: [https://redops-hub.web.app/](https://redops-hub.web.app/)
-- **Main Repository**: [https://github.com/AbdoFawzi777/redops-hub](https://github.com/AbdoFawzi777/redops-hub)
-- **Report Issues**: [https://github.com/AbdoFawzi777/john_engine/issues](https://github.com/AbdoFawzi777/john_engine/issues)
+## 👤 Author & Copyright
+
+**Abdallah Fawzi Ali Mahmoud**  
+Lead Developer & Security Architect of RedOps Hub  
+- **GitHub:** [@AbdoFawzi777](https://github.com/AbdoFawzi777)  
+- **Telegram:** [@ABdo_FawZi1](https://telegram.me/ABdo_FawZi1)  
+- **Website:** [RedOps Hub Platform](https://redops-hub.web.app)
+
+*Copyright (c) 2026 Abdallah Fawzi Ali Mahmoud. All rights reserved.*
