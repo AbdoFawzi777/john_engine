@@ -1,6 +1,6 @@
 name: john_engine
-description: A modular simulation engine for RedOps Hub.
-version: 1.0.0
+description: Offline password hash identifier, entropy analyzer, and compliance auditor for Dart & Flutter. Inspired by John the Ripper.
+version: 2.0.0
 publish_to: none
 
 environment:
